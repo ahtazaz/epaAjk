@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EpaAjk</title>
+<link rel="stylesheet" href="{%static 'css/mnavbar.css' %}">
+
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+      <div style="width:80px;">
+      <a href=""><img src="{%static 'images/EPA_WhiteBG.png' %}" alt="EpaAjk" height="50"/></a>
+ 
+      </div>
+       {% if request.user.is_authenticated %}
+   <div class="dropdown">
+    <button class="dropbtn">Home
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+    <a href="{% url 'getair' %}">Add Air Data</a>
+    <a href="{% url 'getwater' %}">Add Water Data</a>
+    <a href="{% url 'getnews' %}">Add news update</a>
+    <a href="{% url 'post' %}">Post Blog</a>
+    <a href="{% url 'logout' %}">Logout</a>
+    </div>
+    </div>
+    {% else %}
+      <div class="dropdown">
+    <button class="dropbtn">Home
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">History</a>
+      <a href="#">Vision</a>
+      <a href="#">Mission</a>
+      <a href="#">Powers</a>
+      <a href="#">Functions</a>
+    </div>
+  </div>
+    <div class="dropdown">
+    <button class="dropbtn">Labs
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="">Water Quality</a>
+      <a href="{% url 'air' %}">Air Quality</a>
+      <a href="#">Vehicular</a>
+      <a href="#">Plastic Bag</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Environmental Assessment
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">How to File EIA/IEE</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Legal Framework
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Acts</a>
+      <a href="#">Regulation</a>
+      <a href="#">Environmental Quality Standards</a>
+      <a href="#">Sectoral Guidelines</a>
+    
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Enforcement
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Environmental Protection Notices</a>
+      <a href="#">Environmental Protection Orders</a>
+      <a href="#">Environmental Tribunals</a>
+      <a href="#">Environmental Magistrates</a>
+      <a href="#">List to Green</a>
+      <a href="#">Green Judgements</a>
+    </div>
+  </div>
+
+  <a href="#news">News</a>
+  <a href="#about">About</a>
+
+  <a href="contact">Contact Us</a>
+  <a href="{% url 'login' %}">log in</a>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+<div style="padding-left:16px">
+  <h2></h2>
+  <p></p>
+  <p></p>
+</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+{%block body%}
+{% endblock %}
+{% endif %}
+</body>
+</html>

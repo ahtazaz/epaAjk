@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>EPA</title>
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body style=" background-image:url("{%static 'images/5.jpg' %}");">
+{% include 'mnav.html' %}
+<!-- partial:index.partial.html -->
+<div class="login-page" style=" background-image:url("{%static 'images/contact.jpg' %}");">
+
+  <div class="form" >
+    <form class="login-form" method="post">
+    {% csrf_token %}
+      <input type="text" placeholder="username" name="username"/>
+      <input type="password" placeholder="password" name="password"/>
+      <button>login</button>
+    </form>
+  </div>
+</div>
+<!-- partial -->
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script  src="{% static 'login.js' %}"></script>
+
+</body>
+</html>

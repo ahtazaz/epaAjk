@@ -1,0 +1,33 @@
+ {% extends "base.html" %}
+{% block content %}
+<div>
+{% include 'mnav.html' %}
+</div>
+ <form action="" method="POST" class="ui form">
+
+      {% csrf_token %}
+<div>
+<label>Carbon_Monoxide</label>
+<input type="number" name="a"></div>
+<div>
+<label>NOx</label>
+<input type="number" name="b"></div>
+<div>
+<label>SOx</label>
+<input type="number" name="c"></div>
+<div>
+<label>Ozone</label>
+<input type="number" name="d"></div>
+<div>
+<label>Particulate_Matter</label>
+<input type="number" name="e"></div>
+<div>
+<label>SOx</label>
+<input type="number" name="f"></div>
+<div>
+<button class="ui primary button" type="submit"> Submit  </button></div>
+</form>
+<div style="margin-left: -5%;margin-right: -5%;margin-top: 5%;">
+{% include 'footer.html' %} 
+</div>
+{% endblock  %}
